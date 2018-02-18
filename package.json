@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
+    "houndify": "^2.1.0",
     "knockout": "^3.5.0-beta",
     "path": "^0.12.7"
   }
