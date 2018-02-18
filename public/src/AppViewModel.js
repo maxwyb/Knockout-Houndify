@@ -21,20 +21,6 @@ function AppViewModel() {
     self.transcriptionString = window.transcriptionString;
     self.transcriptionResponses = window.transcriptionResponses;
 
-    // [DEBUG]
-    self.outsideFunctionResponses = ko.observableArray([new HondifyResponse("outside func element")]);
-
-    self.availableMeals = [
-        { mealName: "Standard (sandwich)", price: 0 },
-        { mealName: "Premium (lobster)", price: 34.95 },
-        { mealName: "Ultimate (whole zebra)", price: 290 }
-    ]; 
-    self.seats = ko.observableArray([
-        new SeatReservation("Steve", self.availableMeals[0]),
-        new SeatReservation("Bert", self.availableMeals[0])
-    ]);
-    // END DEBUG
-
     self.onMicrophoneClick = function () {
         console.log("DEBUG: transcriptionResponses: ", self.transcriptionResponses());
 

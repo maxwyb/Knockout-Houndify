@@ -42,11 +42,7 @@ function onResponse(response, info) {
         console.log(response.AllResults);
 
         // transcriptionResponses.push({ response: response.AllResults[0].WrittenResponse });
-        // DEBUG
-        var transcriptionResponses_old = window.transcriptionResponses;
         window.transcriptionResponses.push(new HondifyResponse(response.AllResults[0].WrittenResponse));
-        console.log("Is the transcriptionResponses object the same after onResponse()? ", transcriptionResponses_old === window.transcriptionResponses);
-        // END DEBUG
         conversationState = response.AllResults[0].ConversationState;
     }
 }
