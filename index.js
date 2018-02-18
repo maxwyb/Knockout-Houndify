@@ -7,6 +7,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
 
+// Houndify API server-side
 var houndifyExpress = require('houndify').HoundifyExpress;
 app.get('/textSearchProxy', houndifyExpress.createTextProxyHandler());
 

@@ -22,8 +22,6 @@ function AppViewModel() {
     self.transcriptionResponses = window.transcriptionResponses;
 
     self.onMicrophoneClick = function () {
-        console.log("DEBUG: transcriptionResponses: ", self.transcriptionResponses());
-
         if (!recorder) {
             return;
         }

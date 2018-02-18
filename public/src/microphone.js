@@ -5,7 +5,7 @@ function HondifyResponse(resp) {
 }
 
 var transcriptionString = ko.observable();
-var transcriptionResponses = ko.observableArray([new HondifyResponse("test response")]);
+var transcriptionResponses = ko.observableArray();
 
 // Houndify parameter initializations
 var clientId = "5EPSnXvMIUpGezVkC3QUGw==";
