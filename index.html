@@ -17,6 +17,34 @@
 
         <p><button data-bind="click: $root.onMicrophoneClick">Microphone Button</button></p>
         <p><strong data-bind="text: transcriptionString"></strong></p>
+        <!-- <p><strong data-bind="text: transcriptionResponses()[0].response"></strong></p> -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Hondify Response</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: transcriptionResponses">
+                <tr>
+                    <td data-bind="text: response"></td>
+                </tr>
+            </tbody>
+        
+            <!-- DEBUG -->
+            <tbody data-bind="foreach: outsideFunctionResponses">
+                <tr>
+                    <td data-bind="text: response"></td>
+                </tr>
+            </tbody>
+        
+            <tbody data-bind="foreach: seats">
+                <tr>
+                    <td data-bind="text: meal().mealName"></td>
+                    <td data-bind="text: meal().price"></td>
+                </tr>
+            </tbody>
+        </table>
+
 
         <script type='text/javascript' src="/src/microphone.js"></script>
 

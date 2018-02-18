@@ -1,5 +1,11 @@
-// Global parameters used by other parts of the app
+// Global parameters used by other parts of the app (knockout.js)
+function HondifyResponse(resp) {
+    var self = this;
+    self.response = resp;
+}
+
 var transcriptionString = ko.observable();
+var transcriptionResponses = ko.observableArray([new HondifyResponse("test response")]);
 
 // Houndify parameter initializations
 var clientId = "5EPSnXvMIUpGezVkC3QUGw==";
@@ -34,6 +40,13 @@ function onResponse(response, info) {
     if (response.AllResults && response.AllResults.length) {
         console.log("onResponse: ");
         console.log(response.AllResults);
+
+        // transcriptionResponses.push({ response: response.AllResults[0].WrittenResponse });
+        // DEBUG
+        var transcriptionResponses_old = window.transcriptionResponses;
+        window.transcriptionResponses.push(new HondifyResponse(response.AllResults[0].WrittenResponse));
+        console.log("Is the transcriptionResponses object the same after onResponse()? ", transcriptionResponses_old === window.transcriptionResponses);
+        // END DEBUG
         conversationState = response.AllResults[0].ConversationState;
     }
 }
