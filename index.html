@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Knockout.js Sample App</title>
+        <!-- knockout.js library has to be loaded early -->
         <script type='text/javascript' src='/scripts/knockout-3.4.2.debug.js'></script>
         <script type='text/javascript' src="/scripts/houndify.js"></script>
     </head>
@@ -17,9 +18,9 @@
         <p><button data-bind="click: $root.onMicrophoneClick">Microphone Button</button></p>
         <p><strong data-bind="text: transcriptionString"></strong></p>
 
-        <script type='text/javascript' src="/scripts/microphone.js"></script>
+        <script type='text/javascript' src="/src/microphone.js"></script>
 
-        <script type='text/javascript' src='/scripts/AppViewModel.js'></script>
+        <script type='text/javascript' src='/src/AppViewModel.js'></script>
     </body>
 </html>
     
